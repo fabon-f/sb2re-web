@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@fabon/sb2re':
+        specifier: npm:@jsr/fabon__sb2re@^0.1.1
+        version: '@jsr/fabon__sb2re@0.1.1'
       solid-js:
         specifier: ^1.8.21
         version: 1.8.21
@@ -277,6 +280,24 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
+
+  '@jsr/fabon__sb2re@0.1.1':
+    resolution: {integrity: sha512-65M2LGoHHes4R3yokopf17SooN1oc6RYWJPIlxXF/jb0UdiE9m5iTqbO3PEmPOZc7qxz3iUwoZrX0zF3A3CX1w==, tarball: https://npm.jsr.io/~/11/@jsr/fabon__sb2re/0.1.1.tgz}
+
+  '@jsr/progfay__scrapbox-parser@9.1.1':
+    resolution: {integrity: sha512-6xKts1eeoS6vJ0D5V8Mz69KHcTKjDQch5Gh+mA/YyVv9lqLSpOaueLZlcFiiNcNazFWZOfi9hDX3wrUSXnBLvg==, tarball: https://npm.jsr.io/~/11/@jsr/progfay__scrapbox-parser/9.1.1.tgz}
+
+  '@jsr/std__bytes@1.0.2':
+    resolution: {integrity: sha512-bkZ1rllRB1qsxFbPqtO1VAYTW2+3ZDmf6pcy8xihKS33r0Z1ly6/E/5DoapnJsNy05LdnANUySWt5kj/awgGdg==, tarball: https://npm.jsr.io/~/11/@jsr/std__bytes/1.0.2.tgz}
+
+  '@jsr/std__cli@1.0.3':
+    resolution: {integrity: sha512-d3FDmuSijWmoMWY8gVctLkHkUkwcIqgOfN52FtymApOH7le6byqW29il9ribJC869klKI4FznWN/B5aCi0gIDQ==, tarball: https://npm.jsr.io/~/11/@jsr/std__cli/1.0.3.tgz}
+
+  '@jsr/std__fmt@1.0.0':
+    resolution: {integrity: sha512-4dI1vK99XsRNtU7waMH3vm9Yywo3n3li0MZ72JCXaKTRHI7LxobI1fGnzPJUinJWpPtgQoTJQuFbCUxVrr7wzA==, tarball: https://npm.jsr.io/~/11/@jsr/std__fmt/1.0.0.tgz}
+
+  '@jsr/std__io@0.224.5':
+    resolution: {integrity: sha512-1Y8ZWIjFiQKkaSJwbt7NM/9esDtO0ieKS4vcT929dFArG2ADk7ZKVAV4KluYYh4+kF5VgkOcvJkEm84KeBpqFA==, tarball: https://npm.jsr.io/~/11/@jsr/std__io/0.224.5.tgz}
 
   '@nothing-but/utils@0.12.1':
     resolution: {integrity: sha512-1qZU1Q5El0IjE7JT/ucvJNzdr2hL3W8Rm27xNf1p6gb3Nw8pGnZmxp6/GEW9h+I1k1cICxXNq25hBwknTQ7yhg==}
@@ -923,6 +944,25 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
+
+  '@jsr/fabon__sb2re@0.1.1':
+    dependencies:
+      '@jsr/progfay__scrapbox-parser': 9.1.1
+      '@jsr/std__cli': 1.0.3
+      '@jsr/std__fmt': 1.0.0
+      '@jsr/std__io': 0.224.5
+
+  '@jsr/progfay__scrapbox-parser@9.1.1': {}
+
+  '@jsr/std__bytes@1.0.2': {}
+
+  '@jsr/std__cli@1.0.3': {}
+
+  '@jsr/std__fmt@1.0.0': {}
+
+  '@jsr/std__io@0.224.5':
+    dependencies:
+      '@jsr/std__bytes': 1.0.2
 
   '@nothing-but/utils@0.12.1': {}
 

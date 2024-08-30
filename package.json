@@ -16,6 +16,7 @@
     "vite-plugin-solid": "^2.10.2"
   },
   "dependencies": {
+    "@fabon/sb2re": "npm:@jsr/fabon__sb2re@^0.1.1",
     "solid-js": "^1.8.21"
   }
 }
