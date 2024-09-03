@@ -15,6 +15,12 @@ importers:
         specifier: ^1.8.21
         version: 1.8.21
     devDependencies:
+      '@iconify-json/logos':
+        specifier: ^1.2.0
+        version: 1.2.0
+      '@iconify-json/material-symbols-light':
+        specifier: ^1.2.0
+        version: 1.2.0
       solid-devtools:
         specifier: ^0.30.1
         version: 0.30.1(solid-js@1.8.21)(vite@5.4.2)
@@ -461,6 +467,12 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@iconify-json/logos@1.2.0':
+    resolution: {integrity: sha512-VkU9QSqeZR2guWbecdqkcoZEAJfgJJTUm6QAsypuZQ7Cve6zy39wOXDjp2H31I8QyQy4O3Cz96+pNji6UQFg4w==}
+
+  '@iconify-json/material-symbols-light@1.2.0':
+    resolution: {integrity: sha512-shm/DL9TlPSGsdMjjjptDqslQJ+GDOjfkfUI1rbaH2PZzWW4Lpnk8j6v3Kxfp63RWG0DCpOQVB/MyBBcFrTNpQ==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -1599,6 +1611,14 @@ snapshots:
 
   '@esbuild/win32-x64@0.23.1':
     optional: true
+
+  '@iconify-json/logos@1.2.0':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/material-symbols-light@1.2.0':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify/types@2.0.0': {}
 
