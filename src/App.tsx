@@ -1,14 +1,17 @@
-import { createMemo, createSignal, For } from 'solid-js';
+import { createMemo, createSignal } from 'solid-js';
+import { createStore } from 'solid-js/store';
 import type { Component } from 'solid-js';
 import { convert } from './sb2re';
 import OutputArea from './OutputArea';
 
 const App: Component = () => {
   const [text, setText] = createSignal('')
-  const [baseHeadingLevel, setBaseHeadingLevel] = createSignal(3);
-  const [titleIncluded, setTitleIncluded] = createSignal(true);
+  const [settings, setSettings] = createStore({
+    baseHeadingLevel: 3,
+    titleIncluded: true,
+  });
   let dialogElement: HTMLDialogElement | undefined;
-  const reviewResult = createMemo(() => convert(text(), { baseHeadingLevel: baseHeadingLevel(), hasTitle: titleIncluded() }))
+  const reviewResult = createMemo(() => convert(text(), { baseHeadingLevel: settings.baseHeadingLevel, hasTitle: settings.titleIncluded }))
   return <div class="h-full flex flex-col">
     <header class="p-2 flex items-center justify-between">
       <span class="text-2xl">sb2re-web</span>
@@ -25,13 +28,13 @@ const App: Component = () => {
             <div>
               <label>
                 <div class="text-lg">見出し基準レベル</div>
-                <input type="number" onInput={e => setBaseHeadingLevel(parseInt(e.target.value))} value={3} min={2} max={10} />
+                <input type="number" onInput={e => setSettings({ baseHeadingLevel: parseInt(e.target.value) })} value={3} min={2} max={10} />
               </label>
-              <div><code>{`[${'*'.repeat(baseHeadingLevel())} 見出し]`}</code>を節の見出しとして扱う</div>
+              <div><code>{`[${'*'.repeat(settings.baseHeadingLevel)} 見出し]`}</code>を節の見出しとして扱う</div>
             </div>
             <div>
               <label>
-                <input type="checkbox" checked={titleIncluded()} oninput={e => setTitleIncluded(e.target.checked)} />
+                <input type="checkbox" checked={settings.titleIncluded} onInput={e => setSettings({ titleIncluded: e.target.checked })} />
                 <span class="text-lg">1行目を章タイトルとして扱う</span>
               </label>
             </div>
