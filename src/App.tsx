@@ -38,14 +38,14 @@ const App: Component = () => {
                 <span class="text-lg">1行目を章タイトルとして扱う</span>
               </label>
             </div>
-            <button type="submit">閉じる</button>
+            <button type="submit" autofocus>閉じる</button>
           </form>
         </dialog>
       </div>
     </header>
     <div class="flex-1 flex">
       <div class="w-2/4 p-2">
-        <textarea onInput={e => setText(e.target.value)} class="w-full h-full resize-none"></textarea>
+        <textarea onInput={e => setText(e.target.value)} class="w-full h-full resize-none" placeholder="Scrapboxテキストを入力"></textarea>
       </div>
       <div class="w-2/4 p-2">
         <OutputArea value={reviewResult().text} errors={reviewResult().errors} warnings={reviewResult().warnings} />
