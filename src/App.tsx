@@ -23,23 +23,27 @@ const App: Component = () => {
         <a href="https://github.com/fabon-f/sb2re-web" target="_blank" rel="noopener" class="i-logos:github-icon text-3xl">
           <span class="sr-only">GitHub</span>
         </a>
-        <dialog ref={dialogElement} class="backdrop:bg-black/50">
-          <form method="dialog" class="space-y-6">
-            <div>
-              <label>
-                <div class="text-lg">見出し基準レベル</div>
-                <input type="number" onInput={e => setSettings({ baseHeadingLevel: parseInt(e.target.value) })} value={3} min={2} max={10} />
-              </label>
-              <div><code>{`[${'*'.repeat(settings.baseHeadingLevel)} 見出し]`}</code>を節の見出しとして扱う</div>
-            </div>
-            <div>
-              <label>
-                <input type="checkbox" checked={settings.titleIncluded} onInput={e => setSettings({ titleIncluded: e.target.checked })} />
-                <span class="text-lg">1行目を章タイトルとして扱う</span>
-              </label>
-            </div>
-            <button type="submit" autofocus>閉じる</button>
-          </form>
+        <dialog ref={dialogElement} class="backdrop:bg-black/50 p-none" onClick={
+          e => { e.target === e.currentTarget && dialogElement?.close() }
+        }>
+          <div class="p-4">
+            <form method="dialog" class="space-y-6">
+              <div>
+                <label>
+                  <div class="text-lg">見出し基準レベル</div>
+                  <input type="number" onInput={e => setSettings({ baseHeadingLevel: parseInt(e.target.value) })} value={3} min={2} max={10} />
+                </label>
+                <div><code>{`[${'*'.repeat(settings.baseHeadingLevel)} 見出し]`}</code>を節の見出しとして扱う</div>
+              </div>
+              <div>
+                <label>
+                  <input type="checkbox" checked={settings.titleIncluded} onInput={e => setSettings({ titleIncluded: e.target.checked })} />
+                  <span class="text-lg">1行目を章タイトルとして扱う</span>
+                </label>
+              </div>
+              <button type="submit" autofocus>閉じる</button>
+            </form>
+          </div>
         </dialog>
       </div>
     </header>
